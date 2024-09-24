@@ -8,7 +8,6 @@ return {
       {
         mode = { "n", "v" },
         { "<leader><tab>", group = "tabs" },
-        { "<leader>a", group = "code companion" },
         { "<leader>c", group = "code" },
         { "<leader>f", group = "file/find" },
         { "<leader>g", group = "git" },

@@ -30,7 +30,9 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 keymap.set("n", "J", "mzJ`z")
 
 -- Disable arrow keys
-keymap.set("n", "<up>", "<nop>")
-keymap.set("n", "<down>", "<nop>")
-keymap.set("n", "<left>", "<nop>")
-keymap.set("n", "<right>", "<nop>")
+keymap.set("n", "<up>", "kzz")
+keymap.set("n", "<down>", "jzz")
+keymap.set("n", "<left>", "hzz")
+keymap.set("n", "<right>", "lzz")
+
+keymap.set("n", "<leader>bq", [[:%bdelete|edit #|bdelete#<CR>]], { noremap = true, silent = true })
