@@ -255,10 +255,4 @@ map("v", "K", ":m '<-2<CR>gv=gv")
 -- Bettter way to join lines
 map("n", "J", "mzJ`z")
 
--- Disable arrow keys
-map("n", "<up>", "kzz")
-map("n", "<down>", "jzz")
-map("n", "<left>", "hzz")
-map("n", "<right>", "lzz")
-
 map("n", "<leader>bq", [[:%bdelete|edit #|bdelete#<CR>]], { noremap = true, silent = true })
