@@ -80,9 +80,6 @@ map("i", ",", ",<c-g>u")
 map("i", ".", ".<c-g>u")
 map("i", ";", ";<c-g>u")
 
--- lazy
-map("n", "<leader>zz", "<cmd>Lazy<cr>", { desc = "Lazy" })
-
 -- new file
 map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 
