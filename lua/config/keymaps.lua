@@ -71,3 +71,11 @@ map("v", "K", ":m '<-2<CR>gv=gv")
 map("n", "J", "mzJ`z")
 
 map("n", "<leader>bq", [[:%bdelete|edit #|bdelete#<CR>]], { noremap = true, silent = true })
+
+-- Telescope
+map("n", "<leader><space>", LazyVim.pick("files", { root = false }), { desc = "Find files" })
+
+-- Terminal
+map("n", "<c-/>", function()
+  LazyVim.terminal()
+end, { desc = "Terminal (Root Dir)" })
