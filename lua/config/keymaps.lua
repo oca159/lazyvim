@@ -79,3 +79,62 @@ map("n", "<leader><space>", LazyVim.pick("files", { root = false }), { desc = "F
 map("n", "<c-/>", function()
   LazyVim.terminal()
 end, { desc = "Terminal (Root Dir)" })
+
+-- Avante AI-assisted coding
+local function avante_ask(question)
+  return function()
+    require("avante.api").ask({ question = question })
+  end
+end
+
+local commit_prompt = [[
+    Write commit message with commitizen convention. Write clear, informative commit messages that explain the 'what' and 'why' behind changes, not just the 'how'. 
+    Give me the commit message in a code block always, only return the commit message without any other information.
+
+    ```
+    ]] .. vim.fn.system("git diff") .. "\n```"
+
+-- Refactor code with avante
+map(
+  "v",
+  "<leader>ar",
+  avante_ask("Please refactor the following code to improve its clarity and readability"),
+  { desc = "avante: refactor code" }
+)
+
+-- Inline documentation with avante
+map(
+  "v",
+  "<leader>ad",
+  avante_ask(
+    "Please provide documentation in comment code for the following code and suggest better naming to improve readability."
+  ),
+  { desc = "avante: inline documentation" }
+)
+
+-- Fix code with avante
+map(
+  "v",
+  "<leader>af",
+  avante_ask("Please identify issues and suggest fixes with explanations for each of them."),
+  { desc = "avante: fix code" }
+)
+
+-- Generate unit tests with avante
+map(
+  "v",
+  "<leader>at",
+  avante_ask("Please generate unit tests for the following code:"),
+  { desc = "avante: generate unit tests" }
+)
+
+-- Improve naming with avante
+map(
+  "v",
+  "<leader>an",
+  avante_ask("Please provide better names for the following variables and functions:"),
+  { desc = "avante: naming" }
+)
+
+-- Generate commit message with avante
+map("n", "<leader>ac", avante_ask(commit_prompt), { desc = "avante: commit" })

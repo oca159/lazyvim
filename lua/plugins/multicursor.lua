@@ -1,41 +1,53 @@
-if true then
-  return {}
-end
 return {
   "jake-stewart/multicursor.nvim",
+  enabled = false,
   config = function()
-    local multicursor = require("multicursor-nvim")
+    local mc = require("multicursor-nvim")
 
-    multicursor.setup()
+    mc.setup()
 
-    vim.cmd.hi("link MultiCursorCursor Cursor")
-    vim.cmd.hi("link MultiCursorVisual Visual")
+    vim.cmd.hi("link", "MultiCursorCursor", "Cursor")
+    vim.cmd.hi("link", "MultiCursorVisual", "Visual")
 
     vim.keymap.set("n", "<leader>mc", function()
-      if multicursor.hasCursors() then
-        multicursor.clearCursors()
+      if mc.hasCursors() then
+        mc.clearCursors()
       end
-    end, { desc = "Clear all cursors" })
+    end, { desc = "clear all cursors" })
 
     vim.keymap.set({ "n", "v" }, "<leader>ma", function()
-      multicursor.addCursor("*")
-    end, { desc = "Add a cursor and jump to the next word under cursor" })
+      mc.addCursor("*")
+    end, { desc = "add a cursor and jump to the next word under cursor" })
 
+    -- jump to the next word under cursor but do not add a cursor
     vim.keymap.set({ "n", "v" }, "<leader>ms", function()
-      multicursor.skipCursor("*")
-    end, { desc = "Skip and jump to the next word under cursor" })
+      mc.skipCursor("*")
+    end, { desc = "skip and jump to the next word under cursor" })
 
-    vim.keymap.set({ "n", "v" }, "<leader>mj", multicursor.nextCursor, { desc = "Jump to previous cursor" })
-    vim.keymap.set({ "n", "v" }, "<right>mk", multicursor.prevCursor, { desc = "Jump to next cursor" })
-    vim.keymap.set({ "n", "v" }, "<leader>mx", multicursor.deleteCursor, { desc = "Delete cursor" })
-    vim.keymap.set({ "n", "v" }, "<leader>mA", multicursor.alignCursors, { desc = "Align cursors" })
+    vim.keymap.set({ "n", "v" }, "<leader>mj", mc.nextCursor, { desc = "jump to previous cursor" })
+    vim.keymap.set({ "n", "v" }, "<leader>mk", mc.prevCursor, { desc = "jump to next cursor" })
+    vim.keymap.set({ "n", "v" }, "<leader>mx", mc.deleteCursor, { desc = "delete cursor" })
+    vim.keymap.set({ "n", "v" }, "<leader>mA", mc.alignCursors, { desc = "align cursors" })
 
-    vim.keymap.set("v", "I", function()
-      require("my-nvim-micro-plugins.multicursors").add_multicursors_at_line_starts()
+    -- Add cursors above/below the main cursor.
+    vim.keymap.set({ "n", "v" }, "<s-up>", function()
+      mc.addCursor("k")
     end)
+    vim.keymap.set({ "n", "v" }, "<s-down>", function()
+      mc.addCursor("j")
+    end)
+    -- Rotate the main cursor.
+    vim.keymap.set({ "n", "v" }, "<s-left>", mc.nextCursor)
+    vim.keymap.set({ "n", "v" }, "<s-right>", mc.prevCursor)
 
-    vim.keymap.set("v", "A", function()
-      require("my-nvim-micro-plugins.multicursors").add_multicursors_at_line_ends()
+    -- Add and remove cursors with control + left click.
+    vim.keymap.set("n", "<c-leftmouse>", mc.handleMouse)
+
+    -- clear cursors
+    vim.keymap.set("n", "<esc>", function()
+      if mc.hasCursors() then
+        mc.clearCursors()
+      end
     end)
   end,
 }
