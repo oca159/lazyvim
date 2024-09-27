@@ -88,7 +88,7 @@ local function avante_ask(question)
 end
 
 local commit_prompt = [[
-    Write commit message with commitizen convention. Write clear, informative commit messages that explain the 'what' and 'why' behind changes, not just the 'how'. 
+    Write commit message with commitizen convention. Write clear, informative commit messages that explain the 'what' and 'why' behind changes, not just the 'how'.
     Give me the commit message in a code block always, only return the commit message without any other information.
 
     ```
