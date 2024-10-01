@@ -8,7 +8,7 @@ return {
     optional = true,
     opts = {
       spec = {
-        { mapping_key_prefix, group = "ai", mode = { "n", "v" } },
+        { config.mapping_key_prefix, group = "ai", mode = { "n", "v" } },
       },
     },
   },
