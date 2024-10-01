@@ -2,13 +2,20 @@ local config = require("plugins.codecompanion.config")
 local strategies = require("plugins.codecompanion.strategies")
 local prompt_library = require("plugins.codecompanion.prompt_library")
 
+-- Import the variables from the config file
+local SYSTEM_PROMPT = config.SYSTEM_PROMPT
+local COPILOT_EXPLAIN = config.COPILOT_EXPLAIN
+local COPILOT_REVIEW = config.COPILOT_REVIEW
+local COPILOT_REFACTOR = config.COPILOT_REFACTOR
+local mapping_key_prefix = config.mapping_key_prefix
+
 return {
   {
     "folke/which-key.nvim",
     optional = true,
     opts = {
       spec = {
-        { config.mapping_key_prefix, group = "ai", mode = { "n", "v" } },
+        { mapping_key_prefix, group = "ai", mode = { "n", "v" } },
       },
     },
   },
