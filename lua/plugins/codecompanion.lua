@@ -1,6 +1,3 @@
-if true then
-  return {}
-end
 local mapping_key_prefix = vim.g.ai_prefix_key or "<leader>a"
 local machine = vim.loop.os_uname().sysname
 
@@ -456,7 +453,7 @@ return {
       },
       {
         mapping_key_prefix .. "v",
-        "<cmd>CodeCompanionToggle<cr>",
+        "<cmd>CodeCompanionChat Toggle<cr>",
         desc = "Code Companion - Toggle",
         mode = { "n", "v" },
       },
