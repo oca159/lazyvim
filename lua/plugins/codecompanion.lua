@@ -98,10 +98,8 @@ return {
           },
         },
       },
-      opts = {
-        log_level = "DEBUG",
-        system_prompt = SYSTEM_PROMPT,
-      },
+      log_level = "DEBUG",
+      system_prompt = SYSTEM_PROMPT,
       prompt_library = {
         -- Custom the default prompt
         ["Generate a Commit Message"] = {
