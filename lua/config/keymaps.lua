@@ -138,3 +138,4 @@ end, { desc = "Terminal (Root Dir)" })
 --
 -- -- Generate commit message with avante
 -- map("n", "<leader>ac", avante_ask(commit_prompt), { desc = "avante: commit" })
+map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })

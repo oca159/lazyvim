@@ -358,6 +358,12 @@ return {
         desc = "Code Companion - Toggle",
         mode = { "n", "v" },
       },
+      {
+        mapping_key_prefix .. "a",
+        "<cmd>CodeCompanionChat Add<cr>",
+        desc = "Code Companion - Add",
+        mode = { "v" },
+      },
       -- Some common usages with visual mode
       {
         mapping_key_prefix .. "e",
