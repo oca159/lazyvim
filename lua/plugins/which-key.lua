@@ -18,6 +18,7 @@ return {
         { "<leader>r", group = "refactor", icon = { icon = " ", color = "yellow" } },
         { "<leader>s", group = "search" },
         { "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
+        { "<leader>o", group = "tasks", icon = { icon = "󰙵 ", color = "cyan" } },
         { "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
         { "[", group = "prev" },
         { "]", group = "next" },
