@@ -36,6 +36,18 @@ return {
       },
       view_options = {
         show_hidden = true,
+        is_always_hidden = function(name, bufnr)
+          local hide_folders = {
+            "dist",
+            "node_modules",
+          }
+          for _, folder in ipairs(hide_folders) do
+            if name == folder then
+              return true
+            end
+          end
+          return false
+        end,
       },
     })
 

@@ -1,4 +1,8 @@
 return {
+  { "rose-pine/neovim", name = "rose-pine" },
+  { "sainnhe/everforest", name = "everforest" },
+  { "sainnhe/gruvbox-material", name = "gruvbox-material" },
+  { "EdenEast/nightfox.nvim" },
   {
     "catppuccin/nvim",
     lazy = true,
