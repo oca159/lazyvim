@@ -1,21 +1,4 @@
 return {
-  { "rose-pine/neovim", name = "rose-pine" },
-  { "sainnhe/everforest", name = "everforest" },
-  { "sainnhe/gruvbox-material", name = "gruvbox-material" },
-  {
-    "scottmckendry/cyberdream.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      transparent = true,
-      italic_comments = true,
-      hide_fillchars = true,
-      terminal_colors = false,
-      cache = true,
-      borderless_telescope = { border = false, style = "flat" },
-    },
-  },
-  { "EdenEast/nightfox.nvim" },
   {
     "catppuccin/nvim",
     lazy = true,
@@ -32,7 +15,7 @@ return {
       dim_inactive = {
         enabled = true, -- dims the background color of inactive window
         shade = "dark",
-        percentage = 0.01, -- percentage of the shade to apply to the inactive window
+        percentage = 0.10, -- percentage of the shade to apply to the inactive window
       },
       no_italic = false, -- Force no italic
       no_bold = false, -- Force no bold
@@ -96,7 +79,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "cyberdream",
+      colorscheme = "catppuccin",
     },
   },
 }
