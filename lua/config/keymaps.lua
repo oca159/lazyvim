@@ -5,7 +5,6 @@
 local map = vim.keymap.set
 
 local mc = require("multicursor-nvim")
-local zellij = require("zellij-nav")
 
 -- Silent keymap option
 local opts = { silent = true }
