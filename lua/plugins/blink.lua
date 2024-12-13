@@ -9,7 +9,6 @@ return {
       },
       compat = { "supermaven", "codecompanion" },
       providers = {
-        supermaven = { kind = "Supermaven" },
         codecompanion = {
           name = "CodeCompanion",
           module = "codecompanion.providers.completion.blink",
