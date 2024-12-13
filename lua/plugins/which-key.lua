@@ -4,7 +4,7 @@ return {
   opts_extend = { "spec" },
   opts = {
     defaults = {},
-    preset = "modern",
+    preset = "helix",
     spec = {
       {
         mode = { "n", "v" },
