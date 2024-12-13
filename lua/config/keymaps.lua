@@ -67,7 +67,7 @@ map("n", "N", "Nzzzv")
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 
--- Bettter way to join lines
+-- Better way to join lines
 map("n", "J", "mzJ`z")
 
 map(
