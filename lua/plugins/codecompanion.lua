@@ -86,6 +86,18 @@ return {
     "saghen/blink.cmp",
     dependencies = { "olimorris/codecompanion.nvim", "saghen/blink.compat" },
     opts = {
+
+      completion = {
+        accept = {
+          auto_brackets = {
+            enabled = true,
+            kind_resolution = {
+              enabled = true,
+              blocked_filetypes = { "typescriptreact", "javascriptreact", "vue", "codecompanion" },
+            },
+          },
+        },
+      },
       sources = {
         compat = { "codecompanion" },
         providers = {
