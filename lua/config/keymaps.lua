@@ -4,9 +4,6 @@
 
 local map = vim.keymap.set
 
--- Silent keymap option
-local opts = { silent = true }
-
 -- Go to end and start of line
 map("n", "L", "$", { desc = "Go to end of line" })
 map("n", "H", "^", { desc = "Go to start of line" })
@@ -62,10 +59,3 @@ map(
   [[:%bdelete|edit #|bdelete#<CR>]],
   { desc = "Delete all the buffers except this one", noremap = true, silent = true }
 )
-
--- CodeCompanion
-map("n", "<leader>ac", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
-map("v", "<leader>ac", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
-map("n", "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
-map("v", "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
-map("v", "<leader>ad", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
