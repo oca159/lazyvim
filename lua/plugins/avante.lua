@@ -1,33 +1,22 @@
 return {
   "yetone/avante.nvim",
   event = "VeryLazy",
-  lazy = false,
   enabled = false,
+  lazy = false,
   version = false, -- set this if you want to always pull the latest change
   opts = {
-    provider = "claude",
-    windows = {
-      ---@type "right" | "left" | "top" | "bottom"
-      position = "right", -- the position of the sidebar
-      wrap = true, -- similar to vim.o.wrap
-      width = 30, -- default % based on available width
-      sidebar_header = {
-        align = "center", -- left, center, right for title
-        rounded = false,
-      },
-    },
+    -- add any opts here
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",
   -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
   dependencies = {
-    "nvim-treesitter/nvim-treesitter",
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     --- The below dependencies are optional,
+    "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
     "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-    "zbirenbaum/copilot.lua", -- for providers='copilot'
     {
       -- support for image pasting
       "HakonHarnes/img-clip.nvim",
