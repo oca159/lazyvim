@@ -8,19 +8,8 @@ local map = vim.keymap.set
 local opts = { silent = true }
 
 -- Go to end and start of line
-map("n", "<S-l>", "$", { desc = "Go to end of line" })
-map("n", "<S-h>", "^", { desc = "Go to start of line" })
-map("n", "<A-h>", "^", {
-  desc = "Go to start of line",
-  silent = true,
-})
-map("n", "<A-l>", "$", {
-  desc = "Go to end of line",
-  silent = true,
-})
-
--- Save file
-map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+map("n", "L", "$", { desc = "Go to end of line" })
+map("n", "H", "^", { desc = "Go to start of line" })
 
 -- Close all fold except the current one.
 map("n", "zv", "zMzvzz", {
@@ -39,10 +28,10 @@ map("n", "zk", "zckzOzz", {
 
 -- Better paste
 -- remap "p" in visual mode to delete the highlighted text without overwriting your yanked/copied text, and then paste the content from the unnamed register.
-map("v", "p", '"_dP', opts)
+map("v", "p", '"_dP', { desc = "Paste without overwriting" })
 
 -- Copy whole file content to clipboard with C-c
-map("n", "<C-c>", ":%y+<CR>", opts)
+map("n", "<C-c>", ":%y+<CR>", { desc = "Copy whole file content to clipboard" })
 
 --- Increment and decrement numbers
 map("n", "+", "<C-a>", { desc = "Increment number" })
@@ -50,9 +39,6 @@ map("n", "-", "<C-x>", { desc = "Decrement number" })
 
 --- Select all
 map("n", "<C-a>", "ggVG", { desc = "Select all" })
-
---- Exit from insert mode
-map("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 --- Scroll up/down
 map("n", "<C-u>", "<C-u>zz")
@@ -77,17 +63,9 @@ map(
   { desc = "Delete all the buffers except this one", noremap = true, silent = true }
 )
 
--- Telescope
-map("n", "<leader><space>", LazyVim.pick("files", { root = false }), { desc = "Find files" })
-
 -- CodeCompanion
 map("n", "<leader>ac", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
 map("v", "<leader>ac", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
 map("n", "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
 map("v", "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
 map("v", "<leader>ad", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
-
-map("n", "<c-h>", "<cmd>ZellijNavigateLeftTab<cr>", { desc = "navigate left or tab" })
-map("n", "<c-j>", "<cmd>ZellijNavigateDown<cr>", { desc = "navigate down" })
-map("n", "<c-k>", "<cmd>ZellijNavigateUp<cr>", { desc = "navigate up" })
-map("n", "<c-l>", "<cmd>ZellijNavigateRightTab<cr>", { desc = "navigate right or tab" })
