@@ -38,20 +38,20 @@ map("n", "-", "<C-x>", { desc = "Decrement number" })
 map("n", "<C-a>", "ggVG", { desc = "Select all" })
 
 --- Scroll up/down
-map("n", "<C-u>", "<C-u>zz")
-map("n", "<C-d>", "<C-d>zz")
-map("n", "G", "Gzz")
+map("n", "<C-u>", "<C-u>zz", { desc = "Scroll up" })
+map("n", "<C-d>", "<C-d>zz", { desc = "Scroll down" })
+map("n", "G", "Gzz", { desc = "Go to the last line" })
 
 --- Search
-map("n", "n", "nzzzv")
-map("n", "N", "Nzzzv")
+map("n", "n", "nzzzv", { desc = "Search forward" })
+map("n", "N", "Nzzzv", { desc = "Search backward" })
 
 --- Move lines up/down
-map("v", "J", ":m '>+1<CR>gv=gv")
-map("v", "K", ":m '<-2<CR>gv=gv")
+map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
+map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 
 -- Better way to join lines
-map("n", "J", "mzJ`z")
+map("n", "J", "mzJ`z", { desc = "Join lines" })
 
 map(
   "n",
@@ -59,3 +59,5 @@ map(
   [[:%bdelete|edit #|bdelete#<CR>]],
   { desc = "Delete all the buffers except this one", noremap = true, silent = true }
 )
+
+map("n", "<leader>/", LazyVim.pick("live_grep", { rg_glob = true }), { desc = "Live Grep with Dynamic Args in FZF" })

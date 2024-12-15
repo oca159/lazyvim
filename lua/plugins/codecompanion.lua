@@ -86,7 +86,6 @@ return {
     "saghen/blink.cmp",
     dependencies = { "olimorris/codecompanion.nvim", "saghen/blink.compat" },
     opts = {
-
       completion = {
         accept = {
           auto_brackets = {
