@@ -85,7 +85,7 @@ return {
     dependencies = { "olimorris/codecompanion.nvim", "saghen/blink.compat" },
     opts = {
       enabled = function()
-        return vim.bo.filetype ~= "snacks_input"
+        return vim.bo.filetype ~= "snacks_input" and vim.bo.filetype ~= "prompt"
       end,
       completion = {
         accept = {
