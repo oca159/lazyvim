@@ -28,7 +28,7 @@ map("n", "zk", "zckzOzz", {
 map("v", "p", '"_dP', { desc = "Paste without overwriting" })
 
 -- Copy whole file content to clipboard with C-c
-map("n", "<C-c>", ":%y+<CR>", { desc = "Copy whole file content to clipboard" })
+map("n", "<leader>y", ":%y+<CR>", { desc = "Copy whole file content to clipboard" })
 
 --- Increment and decrement numbers
 map("n", "+", "<C-a>", { desc = "Increment number" })

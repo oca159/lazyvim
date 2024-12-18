@@ -29,7 +29,28 @@ return {
             user = "Me",
           },
           slash_commands = generate_slash_commands(),
+          keymaps = {
+            close = {
+              modes = {
+                n = "q",
+              },
+              index = 3,
+              callback = "keymaps.close",
+              description = "Close Chat",
+            },
+            stop = {
+              modes = {
+                n = "<C-c",
+              },
+              index = 4,
+              callback = "keymaps.stop",
+              description = "Stop Request",
+            },
+          },
         },
+      },
+      inline = {
+        adapter = "anthropic",
       },
     },
     keys = {
@@ -63,6 +84,9 @@ return {
     "saghen/blink.cmp",
     dependencies = { "olimorris/codecompanion.nvim", "saghen/blink.compat" },
     opts = {
+      enabled = function()
+        return vim.bo.filetype ~= "snacks_input"
+      end,
       completion = {
         accept = {
           auto_brackets = {
