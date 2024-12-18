@@ -83,9 +83,10 @@ return {
   {
     "saghen/blink.cmp",
     dependencies = { "olimorris/codecompanion.nvim", "saghen/blink.compat" },
+    event = "InsertEnter",
     opts = {
       enabled = function()
-        return vim.bo.filetype ~= "snacks_input" and vim.bo.filetype ~= "prompt"
+        return vim.bo.buftype ~= "prompt" and vim.b.completion ~= false
       end,
       completion = {
         accept = {

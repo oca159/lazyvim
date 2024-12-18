@@ -2,11 +2,6 @@ return {
   "snacks.nvim",
   opts = {
     scroll = { enabled = false },
-    input = {
-      b = {
-        completion = false, -- disable blin completions in input
-      },
-    },
   },
   keys = {
     {
