@@ -10,8 +10,3 @@ autocmd("BufEnter", {
   pattern = "",
   command = "set fo-=c fo-=r fo-=o",
 })
-
-autocmd("VimLeave", {
-  pattern = "*",
-  command = "silent !zellij action switch-mode normal",
-})

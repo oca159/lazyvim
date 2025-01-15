@@ -22,14 +22,14 @@ return {
       no_underline = false, -- Force no underline
       styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
         comments = { "italic" }, -- Change the style of comments
-        conditionals = { "italic" },
-        loops = { "italic" },
+        conditionals = {},
+        loops = {},
         functions = {},
         keywords = {},
         strings = {},
         variables = {},
         numbers = {},
-        booleans = { "italic" },
+        booleans = {},
         properties = {},
         types = {},
         operators = {},

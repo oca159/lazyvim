@@ -59,5 +59,3 @@ map(
   [[:%bdelete|edit #|bdelete#<CR>]],
   { desc = "Delete all the buffers except this one", noremap = true, silent = true }
 )
-
-map("n", "<leader>/", LazyVim.pick("live_grep", { rg_glob = true }), { desc = "Live Grep with Dynamic Args in FZF" })
