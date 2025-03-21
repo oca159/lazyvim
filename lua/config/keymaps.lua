@@ -30,12 +30,8 @@ map("v", "p", '"_dP', { desc = "Paste without overwriting" })
 -- Copy whole file content to clipboard with C-c
 map("n", "<leader>y", ":%y+<CR>", { desc = "Copy whole file content to clipboard" })
 
---- Increment and decrement numbers
-map("n", "+", "<C-a>", { desc = "Increment number" })
-map("n", "-", "<C-x>", { desc = "Decrement number" })
-
 --- Select all
-map("n", "<C-a>", "ggVG", { desc = "Select all" })
+map("n", "ga", "ggVG", { desc = "Select all" })
 
 --- Scroll up/down
 map("n", "<C-u>", "<C-u>zz", { desc = "Scroll up" })
@@ -55,7 +51,7 @@ map("n", "J", "mzJ`z", { desc = "Join lines" })
 
 map(
   "n",
-  "<leader>bq",
+  "<leader>ba",
   [[:%bdelete|edit #|bdelete#<CR>]],
   { desc = "Delete all the buffers except this one", noremap = true, silent = true }
 )

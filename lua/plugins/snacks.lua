@@ -2,6 +2,14 @@ return {
   "snacks.nvim",
   opts = {
     scroll = { enabled = false },
+    terminal = { win = { position = "float" } },
+    picker = {
+      formatters = {
+        file = {
+          filename_first = true,
+        },
+      },
+    },
   },
   keys = {
     {
@@ -32,6 +40,16 @@ return {
         })
       end,
       desc = "Toggle lua scratch buffer",
+    },
+    {
+      "<leader>4",
+      function()
+        Snacks.scratch({
+          ft = "txt",
+          name = "txt scratch",
+        })
+      end,
+      desc = "Toggle txt scratch buffer",
     },
     {
       "<leader>S",

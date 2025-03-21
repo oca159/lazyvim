@@ -1,11 +1,13 @@
+if true then
+  return {}
+end
 ---@diagnostic disable-next-line: unused-local
 local function generate_slash_commands()
   local commands = {}
-  local picker = LazyVim.pick.picker.name == "fzf" and "fzf_lua" or LazyVim.pick.picker.name
   for _, command in ipairs({ "buffer", "file", "help", "symbols" }) do
     commands[command] = {
       opts = {
-        provider = picker, -- dynamically resolve the provider
+        provider = LazyVim.pick.picker.name, -- dynamically resolve the provider
       },
     }
   end
@@ -18,8 +20,8 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
-      { "MeanderingProgrammer/render-markdown.nvim", ft = { "markdown", "codecompanion" } },
     },
+    enabled = false,
     opts = {
       strategies = {
         chat = {
