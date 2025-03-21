@@ -1,6 +1,3 @@
-if true then
-  return {}
-end
 ---@diagnostic disable-next-line: unused-local
 local function generate_slash_commands()
   local commands = {}
@@ -21,7 +18,7 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
     },
-    enabled = false,
+    enabled = true,
     opts = {
       strategies = {
         chat = {
@@ -100,13 +97,8 @@ return {
         },
       },
       sources = {
-        compat = { "codecompanion" },
-        providers = {
-          codecompanion = {
-            name = "CodeCompanion",
-            module = "codecompanion.providers.completion.blink",
-            enabled = true,
-          },
+        per_filetype = {
+          codecompanion = { "codecompanion" },
         },
       },
     },

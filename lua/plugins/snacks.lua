@@ -1,6 +1,7 @@
 return {
   "snacks.nvim",
   opts = {
+    animate = { enabled = false },
     scroll = { enabled = false },
     terminal = { win = { position = "float" } },
     picker = {
@@ -33,16 +34,6 @@ return {
     },
     {
       "<leader>3",
-      function()
-        Snacks.scratch({
-          ft = "lua",
-          name = "lua scratch",
-        })
-      end,
-      desc = "Toggle lua scratch buffer",
-    },
-    {
-      "<leader>4",
       function()
         Snacks.scratch({
           ft = "txt",
