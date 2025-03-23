@@ -20,6 +20,13 @@ return {
     },
     enabled = true,
     opts = {
+      display = {
+        chat = {
+          intro_message = "Welcome to CodeCompanion ✨! Press ? for options",
+          show_header_separator = false, -- Show header separators in the chat buffer? Set this to false if you're using an external markdown formatting plugin
+          auto_scroll = false,
+        },
+      },
       strategies = {
         chat = {
           adapter = "anthropic",
@@ -78,6 +85,10 @@ return {
         desc = "CodeCompanion add to chat",
       },
     },
+  },
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    ft = { "markdown", "codecompanion" },
   },
   {
     "saghen/blink.cmp",
