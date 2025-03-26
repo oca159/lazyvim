@@ -4,6 +4,7 @@ return {
     animate = { enabled = false },
     scroll = { enabled = false },
     terminal = { win = { position = "float" } },
+    explorer = { enabled = false },
     picker = {
       formatters = {
         file = {
