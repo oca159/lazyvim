@@ -55,6 +55,3 @@ map(
   [[:%bdelete|edit #|bdelete#<CR>]],
   { desc = "Delete all the buffers except this one", noremap = true, silent = true }
 )
-
--- Oil
-map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory in oil" })
