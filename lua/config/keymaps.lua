@@ -55,3 +55,39 @@ map(
   [[:%bdelete|edit #|bdelete#<CR>]],
   { desc = "Delete all the buffers except this one", noremap = true, silent = true }
 )
+
+local function notify(command_id)
+  return function()
+    require("vscode").action(command_id)
+  end
+end
+
+if vim.g.vscode then
+  map("n", "gd", notify("editor.action.revealDefinition"), { silent = true })
+  map("n", "gI", notify("editor.action.goToImplementation"), { silent = true })
+  map("v", "<leader><leader>", notify("workbench.action.quickOpen"), { silent = true })
+  map("n", "<leader>,", notify("workbench.action.openRecent"), { silent = true, noremap = true })
+  map("v", "<leader>r", notify("editor.action.refactor"), { silent = true })
+  map("n", "<leader>bb", notify("workbench.action.navigateLast"), { silent = true })
+  map("n", "<leader>ca", notify("editor.action.showContextMenu"), { silent = true })
+  map("n", "<leader>cf", notify("editor.action.formatDocument"), { silent = true })
+  map("n", "<leader>co", notify("editor.action.organizeImports"), { silent = true })
+  map("n", "<leader>cr", notify("editor.action.rename"), { silent = true })
+  map("n", "<leader>e", notify("workbench.view.explorer"), { silent = true })
+  map("n", "<leader>gg", notify("workbench.view.scm"), { silent = true, noremap = true })
+  map("n", "<leader>gb", notify("gitlens.toggleFileBlame"), { silent = true })
+  map("n", "<leader>gc", notify("gitlens.showQuickRepoHistory"), { silent = true })
+  map("n", "<leader>gd", notify("git.viewChanges"), { silent = true })
+  map("n", "<leader>gf", notify("gitlens.showQuickFileHistory"), { silent = true })
+  map("n", "<leader>gr", notify("git.revertSelectedRanges"), { silent = true })
+  map("n", "<leader>gR", notify("workbench.action.files.revert"), { silent = true })
+  map("n", "<leader>sc", notify("workbench.action.showCommands"), { silent = true })
+  map("n", "<leader>sg", notify("workbench.action.findInFiles"), { silent = true })
+  map("n", "<leader>ss", notify("workbench.action.gotoSymbol"), { silent = true })
+  map("n", "<leader>wd", notify("workbench.action.closeActiveEditor"), { silent = true })
+  map("n", "<leader>ws", notify("workbench.action.splitEditorDown"), { silent = true })
+  map("n", "<leader>wv", notify("workbench.action.splitEditorRight"), { silent = true })
+  map("n", "<leader>xx", notify("workbench.actions.view.problems"), { silent = true })
+else
+  -- ordinary Neovim
+end

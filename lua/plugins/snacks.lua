@@ -3,8 +3,8 @@ return {
   opts = {
     animate = { enabled = false },
     scroll = { enabled = false },
-    terminal = { win = { position = "float" } },
     explorer = { enabled = false },
+    terminal = { enabled = true },
     picker = {
       formatters = {
         file = {
