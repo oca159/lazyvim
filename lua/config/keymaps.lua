@@ -56,6 +56,11 @@ map(
   { desc = "Delete all the buffers except this one", noremap = true, silent = true }
 )
 
+map({ "n", "v" }, "dr", ":Gitsigns reset_hunk<CR>", { desc = "Reset Hunk" })
+map({ "n", "v" }, "do", ":Gitsigns preview_hunk_inline<CR>", { desc = "Preview Hunk Line" })
+
+map({ "n" }, "<leader>gg", ":Neogit<CR>", { desc = "Open neogit" })
+
 local function notify(command_id)
   return function()
     require("vscode").action(command_id)
