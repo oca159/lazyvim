@@ -29,7 +29,10 @@ return {
       },
       strategies = {
         chat = {
-          adapter = "anthropic",
+          adapter = {
+            name = "copilot",
+            model = "claude-sonnet-4-20250514",
+          },
           roles = {
             llm = "CodeCompanion",
             user = "Me",
@@ -56,12 +59,12 @@ return {
         },
       },
       inline = {
-        adapter = "anthropic",
+        adapter = "copilot",
       },
     },
     keys = {
       {
-        "<leader>ac",
+        "<leader>aa",
         "<cmd>CodeCompanionActions<cr>",
         mode = { "n", "v" },
         noremap = true,
@@ -69,7 +72,7 @@ return {
         desc = "CodeCompanion actions",
       },
       {
-        "<leader>aa",
+        "<leader>ac",
         "<cmd>CodeCompanionChat Toggle<cr>",
         mode = { "n", "v" },
         noremap = true,
