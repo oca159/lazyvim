@@ -50,5 +50,12 @@ return {
       end,
       desc = "Select Scratch Buffer",
     },
+    {
+      "<leader><space>",
+      function()
+        Snacks.picker.files({ hidden = true })
+      end,
+      desc = "Find Files (cwd)",
+    },
   },
 }
