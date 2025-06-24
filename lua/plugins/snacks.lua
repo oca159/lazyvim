@@ -3,6 +3,7 @@ return {
   opts = {
     animate = { enabled = false },
     scroll = { enabled = false },
+    explorer = { enabled = false },
     terminal = { enabled = true },
     picker = {
       formatters = {
