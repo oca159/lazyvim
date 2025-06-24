@@ -3,7 +3,6 @@ return {
   opts = {
     animate = { enabled = false },
     scroll = { enabled = false },
-    explorer = { enabled = false },
     terminal = { enabled = true },
     picker = {
       formatters = {
@@ -56,41 +55,6 @@ return {
         Snacks.picker.files({ hidden = true })
       end,
       desc = "Find Files (cwd)",
-    },
-    {
-      "<leader>ot",
-      function()
-        Snacks.terminal("taskwarrior-tui")
-      end,
-      desc = "Open tasks",
-    },
-    {
-      "<leader>obd",
-      function()
-        Snacks.terminal("task burndown.daily", { auto_close = false })
-      end,
-      desc = "Open burndown daily",
-    },
-    {
-      "<leader>obm",
-      function()
-        Snacks.terminal("task burndown.monthly", { auto_close = false })
-      end,
-      desc = "Open burndown daily",
-    },
-    {
-      "<leader>obw",
-      function()
-        Snacks.terminal("task burndown.weekly", { auto_close = false })
-      end,
-      desc = "Open burndown daily",
-    },
-    {
-      "<leader>oc",
-      function()
-        Snacks.terminal("task calendar", { auto_close = false })
-      end,
-      desc = "Open calendar",
     },
   },
 }

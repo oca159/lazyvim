@@ -14,6 +14,7 @@
 
 return {
   "bullets-vim/bullets.vim",
+  enabled = true,
   -- NOTE: enable the plugin only for specific filetypes, if you don't do this,
   -- and you use the new snacks picker by folke, you won't be able to select a
   -- file with <CR> when in insert mode, only in normal mode
