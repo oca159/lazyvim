@@ -9,3 +9,12 @@ autocmd("BufEnter", {
   pattern = "",
   command = "set fo-=c fo-=r fo-=o",
 })
+
+autocmd("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    vim.api.nvim_set_hl(0, "@org.priority.highest", { bg = "#f38ba8", fg = "#000000" })
+    vim.api.nvim_set_hl(0, "@org.priority.default", { bg = "#fab387", fg = "#000000" })
+    vim.api.nvim_set_hl(0, "@org.priority.lowest", { bg = "#f9e2af", fg = "#000000" })
+  end,
+})

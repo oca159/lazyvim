@@ -1,13 +1,10 @@
 return {
-  "saghen/blink.cmp",
-  opts = {
-    keymap = { preset = "super-tab", ["<CR>"] = { "accept", "fallback" } },
-  },
   {
-    "saghen/blink.cmp",
+    "Saghen/blink.cmp",
     dependencies = { "olimorris/codecompanion.nvim", "saghen/blink.compat" },
     event = "InsertEnter",
     opts = {
+      keymap = { preset = "super-tab", ["<CR>"] = { "accept", "fallback" } },
       enabled = function()
         return vim.bo.buftype ~= "prompt" and vim.b.completion ~= false
       end,
