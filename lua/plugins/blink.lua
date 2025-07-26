@@ -4,11 +4,20 @@ return {
     dependencies = { "olimorris/codecompanion.nvim", "saghen/blink.compat" },
     event = "InsertEnter",
     opts = {
-      keymap = { preset = "super-tab", ["<CR>"] = { "accept", "fallback" } },
       enabled = function()
         return vim.bo.buftype ~= "prompt" and vim.b.completion ~= false
       end,
+      keymap = {
+        preset = "enter",
+      },
       completion = {
+        ghost_text = { show_with_menu = false },
+        list = {
+          selection = {
+            preselect = true,
+            auto_insert = false,
+          },
+        },
         accept = {
           auto_brackets = {
             kind_resolution = {

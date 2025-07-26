@@ -18,7 +18,7 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
     },
-    enabled = true,
+    enabled = false,
     opts = {
       display = {
         chat = {
