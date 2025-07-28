@@ -1,7 +1,6 @@
 return {
   {
     "Saghen/blink.cmp",
-    dependencies = { "olimorris/codecompanion.nvim", "saghen/blink.compat" },
     event = "InsertEnter",
     opts = {
       enabled = function()
@@ -17,18 +16,6 @@ return {
             preselect = true,
             auto_insert = false,
           },
-        },
-        accept = {
-          auto_brackets = {
-            kind_resolution = {
-              blocked_filetypes = { "typescriptreact", "javascriptreact", "vue", "codecompanion" },
-            },
-          },
-        },
-      },
-      sources = {
-        per_filetype = {
-          codecompanion = { "codecompanion" },
         },
       },
     },

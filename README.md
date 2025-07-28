@@ -15,5 +15,3 @@ brew install neovim
 ```sh
 git clone https://github.com/oca159/lazyvim.git ~/.config/nvim
 ```
-
-This is something I have
