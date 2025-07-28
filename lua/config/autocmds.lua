@@ -18,3 +18,12 @@ autocmd("ColorScheme", {
     vim.api.nvim_set_hl(0, "@org.priority.lowest", { bg = "#f9e2af", fg = "#000000" })
   end,
 })
+
+-- Disable the concealing in some file formats
+-- The default conceallevel is 3 in LazyVim
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "json", "jsonc", "markdown" },
+  callback = function()
+    vim.wo.conceallevel = 0
+  end,
+})

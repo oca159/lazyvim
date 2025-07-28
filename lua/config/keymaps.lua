@@ -27,9 +27,6 @@ map("n", "zk", "zckzOzz", {
 -- remap "p" in visual mode to delete the highlighted text without overwriting your yanked/copied text, and then paste the content from the unnamed register.
 map("v", "p", '"_dP', { desc = "Paste without overwriting" })
 
--- Copy whole file content to clipboard with C-c
-map("n", "<leader>y", ":%y+<CR>", { desc = "Copy whole file content to clipboard" })
-
 --- Select all
 map("n", "ga", "ggVG", { desc = "Select all" })
 
