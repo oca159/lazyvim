@@ -1,5 +1,5 @@
 return {
-  "oca159/vim-tmux-navigator",
+  "christoomey/vim-tmux-navigator",
   cmd = {
     "TmuxNavigateLeft",
     "TmuxNavigateDown",
