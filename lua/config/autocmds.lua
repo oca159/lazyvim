@@ -27,3 +27,9 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.wo.conceallevel = 0
   end,
 })
+
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
+  callback = function()
+    vim.cmd("checktime")
+  end,
+})

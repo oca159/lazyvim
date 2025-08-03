@@ -1,13 +1,14 @@
 return {
   "folke/which-key.nvim",
-  event = "VeryLazy",
-  opts_extend = { "spec" },
+  event = "VeryLazy", -- Load after UI is ready
+  opts_extend = { "spec" }, -- Allow extending the spec table
   opts = {
-    defaults = {},
-    preset = "helix",
+    defaults = {}, -- Deprecated, kept for compatibility
+    preset = "helix", -- Use Helix-style key hints
     spec = {
       {
-        mode = { "n", "v" },
+        mode = { "n", "v" }, -- Apply to normal and visual modes
+        -- Define key group labels for better organization
         { "<leader><tab>", group = "tabs" },
         { "<leader>a", group = "ai" },
         { "<leader>c", group = "code" },
@@ -28,6 +29,7 @@ return {
         {
           "<leader>b",
           group = "buffer",
+          -- Dynamically expand to show buffer-specific keymaps
           expand = function()
             return require("which-key.extras").expand.buf()
           end,
@@ -35,12 +37,13 @@ return {
         {
           "<leader>w",
           group = "windows",
-          proxy = "<c-w>",
+          proxy = "<c-w>", -- Proxy window commands to Ctrl-W
+          -- Dynamically expand to show window-specific keymaps
           expand = function()
             return require("which-key.extras").expand.win()
           end,
         },
-        -- better descriptions
+        -- Override default descriptions with better ones
         { "gx", desc = "Open with system app" },
       },
     },
@@ -49,6 +52,7 @@ return {
     {
       "<leader>?",
       function()
+        -- Show buffer-local keymaps only
         require("which-key").show({ global = false })
       end,
       desc = "Buffer Keymaps (which-key)",
@@ -56,6 +60,7 @@ return {
     {
       "<c-w><space>",
       function()
+        -- Enter window hydra mode for continuous window operations
         require("which-key").show({ keys = "<c-w>", loop = true })
       end,
       desc = "Window Hydra Mode (which-key)",
@@ -64,6 +69,7 @@ return {
   config = function(_, opts)
     local wk = require("which-key")
     wk.setup(opts)
+    -- Handle deprecated defaults option
     if not vim.tbl_isempty(opts.defaults) then
       LazyVim.warn("which-key: opts.defaults is deprecated. Please use opts.spec instead.")
       wk.register(opts.defaults)
