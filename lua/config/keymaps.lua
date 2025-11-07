@@ -4,9 +4,8 @@
 
 local map = vim.keymap.set
 
--- Go to end and start of line
-map("n", "L", "$", { desc = "Go to end of line" })
-map("n", "H", "^", { desc = "Go to start of line" })
+map("n", "gl", "$", { desc = "Go to end of line" })
+map("n", "gh", "^", { desc = "Go to start of line" })
 
 -- Close all fold except the current one.
 map("n", "zv", "zMzvzz", {
@@ -48,3 +47,7 @@ map(
 
 map({ "n", "v" }, "dr", ":Gitsigns reset_hunk<CR>", { desc = "Reset Hunk" })
 map({ "n", "v" }, "do", ":Gitsigns preview_hunk_inline<CR>", { desc = "Preview Hunk Line" })
+
+map({ "n", "v", "x" }, "<leader>dR", function()
+  require("dapui").open({ reset = true })
+end, { desc = "Reset DAP UI" })

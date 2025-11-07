@@ -8,3 +8,6 @@ vim.g.lazyvim_python_ruff = "ruff"
 vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
 vim.o.termguicolors = true
 vim.o.autoread = true
+vim.g.lazyvim_ruby_lsp = "ruby_lsp"
+vim.g.lazyvim_ruby_formatter = "rubocop"
+vim.g.snacks_animate = true
